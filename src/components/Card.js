@@ -47,7 +47,7 @@ export default function Cards({ mockApi }) {
     <>
       <Box
         sx={{
-          padding: "30px 10px",
+          padding: "20px 10px",
           width: "80%",
           display: "flex",
           justifyContent: "center",
@@ -58,6 +58,7 @@ export default function Cards({ mockApi }) {
             display: "flex",
             justifyContent: "space-around",
             flexWrap: "wrap",
+            width: "90%",
           },
         }}
       >
@@ -68,7 +69,7 @@ export default function Cards({ mockApi }) {
               marginTop: "5px",
               width: 150,
               "@media (max-width: 600px)": {
-                width: "120px",
+                width: "130px",
                 fontSize: "12px",
               },
             }}
