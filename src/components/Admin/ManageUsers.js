@@ -10,31 +10,32 @@ import {
   Paper,
   IconButton,
   Typography,
-  Grid,
+
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 
 const ManageUsers = () => {
   const users = [
-    { id: 1, name: "User 1", email: "user1@example.com", role: "Admin" },
-    { id: 2, name: "User 2", email: "user2@example.com", role: "Customer" },
-    { id: 3, name: "User 3", email: "user3@example.com", role: "Customer" },
-    { id: 4, name: "User 4", email: "user4@example.com", role: "Admin" },
-    { id: 5, name: "User 5", email: "user5@example.com", role: "Admin" },
-    // Add more users to test scrolling
-  ];
+    { id: 1, name: "Rahul Sharma", email: "rahul.sharma@example.com", role: "Admin" },
+    { id: 2, name: "Sneha Kapoor", email: "sneha.kapoor@example.com", role: "Customer" },
+    { id: 3, name: "Aman Verma", email: "aman.verma@example.com", role: "Customer" },
+    { id: 4, name: "Meera Joshi", email: "meera.joshi@example.com", role: "Admin" },
+    { id: 5, name: "Vikram Rao", email: "vikram.rao@example.com", role: "Seller" },
+    { id: 6, name: "Anjali Singh", email: "anjali.singh@example.com", role: "Customer" },
+    { id: 7, name: "Rajesh Mehta", email: "rajesh.mehta@example.com", role: "Admin" },
+    { id: 8, name: "Kriti Desai", email: "kriti.desai@example.com", role: "Customer" },
+    { id: 9, name: "Dev Patel", email: "dev.patel@example.com", role: "Seller" },
+    { id: 10, name: "Riya Malhotra", email: "riya.malhotra@example.com", role: "Customer" },
+  ]
+  
 
-  // Handle edit user (you can implement this function based on your app's logic)
   const handleEditUser = (id) => {
     console.log(`Edit user with ID: ${id}`);
-    // Add edit functionality here (e.g., open a dialog or navigate to an edit page)
   };
 
-  // Handle delete user
   const handleDeleteUser = (id) => {
     console.log(`Delete user with ID: ${id}`);
-    // Add delete functionality here (e.g., make an API call to delete)
   };
 
   return (
@@ -43,37 +44,38 @@ const ManageUsers = () => {
         Manage Users
       </Typography>
 
-      {/* Table container with responsive overflow handling */}
+      
       <TableContainer
-        component={Paper}
+
         sx={{
-          maxWidth: "100%", // Full width of the container
+          maxWidth: "100%", 
+          color:"#fff",
           overflowX: {
-            xs: "auto", // For extra small screens (xs), enable horizontal scrolling
-            sm: "unset", // For small and larger screens (sm+), remove overflow
+            xs: "auto", 
+            sm: "unset", 
           },
-          // If you want the table to take full width on larger screens
+         
           width: {
-            xs: "100%", // For extra small screens (xs), take full width
-            sm: "100%", // For small screens and larger, also take full width
+            xs: "100%", 
+            sm: "100%", 
           },
         }}
       >
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell>Role</TableCell>
-              <TableCell>Actions</TableCell>
+              <TableCell  sx={{ color: "white" }}>Name</TableCell>
+              <TableCell  sx={{ color: "white" }}>Email</TableCell>
+              <TableCell  sx={{ color: "white" }}>Role</TableCell>
+              <TableCell  sx={{ color: "white" }}>Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {users.map((user) => (
               <TableRow key={user.id}>
-                <TableCell>{user.name}</TableCell>
-                <TableCell>{user.email}</TableCell>
-                <TableCell>{user.role}</TableCell>
+                <TableCell  sx={{ color: "white" }}>{user.name}</TableCell>
+                <TableCell  sx={{ color: "white" }}>{user.email}</TableCell>
+                <TableCell  sx={{ color: "white" }}>{user.role}</TableCell>
                 <TableCell>
                   {/* Edit Button */}
                   <IconButton

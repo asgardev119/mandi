@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Drawer,
   AppBar,
@@ -11,11 +11,12 @@ import {
   Box,
   Container,
   IconButton,
+  TextField,
+  Button,
   useTheme,
   useMediaQuery,
-  Modal,
 } from "@mui/material";
-import { NavLink, Routes, Route } from "react-router-dom";
+import { NavLink, Routes, Route, useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import Dashboard from "./Dashboard";
 import ManageProducts from "./ManageProducts";
@@ -23,7 +24,6 @@ import ManageOrders from "./ManageOrders";
 import ManageUsers from "./ManageUsers";
 import Settings from "./Settings";
 import "../../App.css";
-import SignInForm from "../SignIn";
 
 const drawerWidth = 200;
 
@@ -36,16 +36,29 @@ const style = {
   p: 4,
   borderRadius: "10px",
   "@media (max-width:600px)": {
-    width: 200,
+    width: 250,
   },
 };
 
 const AdminPanel = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [open, setOpen] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  // Check if the user is already logged in using localStorage
+  useEffect(() => {
+    if (localStorage.getItem("isAuthenticated") === "true") {
+      setOpen(false); // If the user is authenticated, no need to show login form
+    } else {
+      setOpen(true); // If not, show the login form
+    }
+  }, []);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -53,94 +66,107 @@ const AdminPanel = () => {
 
   const drawer = (
     <div>
-      {/* <Typography variant="h6" sx={{ padding: 2 }}>
-        Admin Panel
-      </Typography>
-      <Divider /> */}
-
       <Divider />
-
       <List>
-        {/* Use NavLink instead of Link for active class */}
-        <ListItem
-          button
-          component={NavLink}
-          to="/admin/dashboard"
-          activeClassName="active"
-        >
+        <ListItem button component={NavLink} to="/admin/dashboard">
           <ListItemText primary="Dashboard" />
         </ListItem>
-        <ListItem
-          button
-          component={NavLink}
-          to="/admin/manage-products"
-          activeClassName="active"
-        >
+        <ListItem button component={NavLink} to="/admin/manage-products">
           <ListItemText primary="Manage Products" />
         </ListItem>
-        <ListItem
-          button
-          component={NavLink}
-          to="/admin/manage-orders"
-          activeClassName="active"
-        >
+        <ListItem button component={NavLink} to="/admin/manage-orders">
           <ListItemText primary="Manage Orders" />
         </ListItem>
-        <ListItem
-          button
-          component={NavLink}
-          to="/admin/manage-users"
-          activeClassName="active"
-        >
+        <ListItem button component={NavLink} to="/admin/manage-users">
           <ListItemText primary="Manage Users" />
         </ListItem>
-        <ListItem
-          button
-          component={NavLink}
-          to="/admin/settings"
-          activeClassName="active"
-        >
+        <ListItem button component={NavLink} to="/admin/settings">
           <ListItemText primary="Settings" />
         </ListItem>
       </List>
     </div>
   );
 
-  const handleChange = () => {
-    setOpen(!open);
+  const handleLogin = () => {
+    if (email === "imran@gmail.com" && password === "imran123") {
+      localStorage.setItem("isAuthenticated", "true");
+      setOpen(false); // login successful
+      setError("");
+      navigate("/admin/dashboard"); // Redirect to dashboard after successful login
+    } else {
+      setError("Invalid email or password");
+    }
   };
 
+
+
   return (
-    <Box sx={{ height: "100vh", background: "#2b4162", width: "100%" }}>
+    <Box sx={{ height: "100vh", background: "#2a2a2a", width: "100%" }}>
       <Typography
         variant="h4"
         sx={{
           width: "100%",
           textAlign: "center",
           position: "absolute",
-          top: "100px",
-          fontSize: { sm: "12px", md: "24px" },
+          top: "80px",
+          fontSize: { sm: "12px", md: "16px" },
         }}
       >
-        Hi, Admin Please Sign In
+        Hi, Admin
       </Typography>
+
       {open ? (
         <Box sx={style}>
-          <Typography
-            onClick={handleChange}
-            sx={{ width: "100%", textAlign: "end", cursor: "pointer" }}
-          >
-            X
+
+          <Typography variant="h6" gutterBottom color="white" textAlign="center">
+            Admin Login
           </Typography>
-          <SignInForm />
+
+          <TextField
+            fullWidth
+            label="Email"
+            variant="outlined"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            margin="normal"
+            InputLabelProps={{ style: { color: "white" } }}
+            InputProps={{ style: { color: "white" } }}
+          />
+
+          <TextField
+            fullWidth
+            label="Password"
+            variant="outlined"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            margin="normal"
+            InputLabelProps={{ style: { color: "white" } }}
+            InputProps={{ style: { color: "white" } }}
+          />
+
+          {error && <Typography color="error">{error}</Typography>}
+
+          <Button
+            variant="outlined"
+            sx={{
+              mt: 2,
+              color: "white",
+              borderColor: "white",
+              "&:hover": {
+                backgroundColor: "rgba(255,255,255,0.1)",
+              },
+            }}
+            onClick={handleLogin}
+          >
+            Login
+          </Button>
         </Box>
       ) : (
-        <Box sx={{ display: "flex", backgroundColor: "#2b4162" }}>
+        <Box sx={{ display: "flex", backgroundColor: "#2a2a2a" }}>
           <AppBar
             position="fixed"
-            sx={{
-              backgroundColor: "#2b4162",
-            }}
+            sx={{ backgroundColor: "#2a2a2a" }}
           >
             <Toolbar>
               {isMobile && (
@@ -163,7 +189,6 @@ const AdminPanel = () => {
           <Drawer
             sx={{
               "@media (max-width:600px)": {
-                // Apply marginTop for small screens (sm)
                 marginTop: "60px",
               },
               width: drawerWidth,
@@ -171,7 +196,7 @@ const AdminPanel = () => {
               "& .MuiDrawer-paper": {
                 width: drawerWidth,
                 boxSizing: "border-box",
-                backgroundColor: "#2b4162",
+                backgroundColor: "#2a2a2a",
                 borderRight: "1px solid #fff",
                 marginTop: "65px",
               },
@@ -190,14 +215,13 @@ const AdminPanel = () => {
           <Box
             component="main"
             sx={{
-              // backgroundColor: "#2b4162",
               marginTop: "80px",
               transition: "margin-left 0.3s ease",
               width: "100%",
               height: "100vh",
             }}
           >
-            <Container sx={{ backgroundColor: "#2b4162" }}>
+            <Container sx={{ backgroundColor: "#2a2a2a" }}>
               <Routes>
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/manage-products" element={<ManageProducts />} />

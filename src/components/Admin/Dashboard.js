@@ -1,13 +1,11 @@
 import React from "react";
 import { Card, CardContent, Typography, Box } from "@mui/material";
 
-const root = {
-  backgroundColor: "#2b4162",
-};
+
 
 const Dashboard = () => {
   return (
-    <div style={root}>
+    <div>
       <Typography variant="h5" gutterBottom>
         Admin Dashboard
       </Typography>
@@ -30,7 +28,7 @@ const Dashboard = () => {
           }}
         >
           <CardContent>
-            <Typography fontSize="12px" color="darkblue" gutterBottom>
+            <Typography fontSize="12px" color="#fff" gutterBottom>
               Total Products
             </Typography>
             <Typography variant="h4">50</Typography>
@@ -47,7 +45,7 @@ const Dashboard = () => {
           }}
         >
           <CardContent>
-            <Typography fontSize="12px" color="darkblue" gutterBottom>
+            <Typography fontSize="12px" color="#fff" gutterBottom>
               Total Orders
             </Typography>
             <Typography variant="h4">120</Typography>
@@ -64,7 +62,7 @@ const Dashboard = () => {
           }}
         >
           <CardContent>
-            <Typography fontSize="12px" color="darkblue" gutterBottom>
+            <Typography fontSize="12px" color="#fff" gutterBottom>
               Total Users
             </Typography>
             <Typography variant="h4">500</Typography>

@@ -3,32 +3,40 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
 
 const ManageOrders = () => {
   const orders = [
-    { id: 1, customer: "Customer 1", total: "$120", status: "Completed" },
-    { id: 2, customer: "Customer 2", total: "$50", status: "Pending" },
-    // Add more orders as needed
-  ];
+    { id: 1, customer: "Amit Sharma", total: "₹120", status: "Completed" },
+    { id: 2, customer: "Pooja Verma", total: "₹50", status: "Pending" },
+    { id: 3, customer: "Ravi Singh", total: "₹90", status: "Cancelled" },
+    { id: 4, customer: "Neha Dubey", total: "₹200", status: "Completed" },
+    { id: 5, customer: "Karan Patel", total: "₹75", status: "Pending" },
+    { id: 6, customer: "Anjali Mehta", total: "₹300", status: "Completed" },
+    { id: 7, customer: "Suresh Yadav", total: "₹60", status: "Pending" },
+    { id: 8, customer: "Priya Jaiswal", total: "₹180", status: "Cancelled" },
+    { id: 9, customer: "Manish Gupta", total: "₹95", status: "Completed" },
+    { id: 10, customer: "Ritika Singh", total: "₹130", status: "Pending" },
+  ]
+  
 
   return (
     <div>
-      <Typography variant="h5" gutterBottom>
-      ManageOrders
+      <Typography variant="h5" gutterBottom sx={{ color: "white" }}>
+        ManageOrders
       </Typography>
-      <TableContainer component={Paper}>
+      <TableContainer >
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Customer</TableCell>
-              <TableCell>Total</TableCell>
-              <TableCell>Status</TableCell>
-              <TableCell>Actions</TableCell>
+              <TableCell sx={{ color: "white" }}>Customer</TableCell>
+              <TableCell sx={{ color: "white" }}>Total</TableCell>
+              <TableCell sx={{ color: "white" }}>Status</TableCell>
+              <TableCell sx={{ color: "white" }}>Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {orders.map((order) => (
               <TableRow key={order.id}>
-                <TableCell>{order.customer}</TableCell>
-                <TableCell>{order.total}</TableCell>
-                <TableCell>{order.status}</TableCell>
+                <TableCell sx={{ color: "white" }}>{order.customer}</TableCell>
+                <TableCell sx={{ color: "white" }}>{order.total}</TableCell>
+                <TableCell sx={{ color: "white" }}>{order.status}</TableCell>
                 <TableCell>
                   <Button variant="outlined" color="secondary" size="small">
                     View

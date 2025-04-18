@@ -1,81 +1,12 @@
 export const productData = [
-  {
-    id: 1,
-    imgUrl:
-      "https://www.meathouseindia.com/wp-content/uploads/2022/08/mutton-curry-cutside-view.jpg",
-    name: ["Mutton", "nonveg", "Meat","all"],
-    price: 800,
-    para: "Fresh mutton",
-    weight: "1kg",
-  },
-  {
-    id: 2,
-    imgUrl:
-      "https://jagsfresh-bucket.s3.amazonaws.com/media/package/img_one/2023-11-01/mutton_500g__1kg.jpg",
-    name: ["Mutton", "nonveg", "Meat","all"],
-    price: 400,
-    para: "fresh mutton",
-    weight: "500g",
-  },
-  {
-    id: 3,
-    imgUrl:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/app/assets/products/sliding_images/jpeg/c0a8ea75-a19c-47b6-b3c8-6ee37a33e14a.jpg?ts=1705489313",
-    name: ["Leg Piece", "nonveg", "murgi","all"],
-    price: 100,
-    para: "chicken legs",
-    weight: "500g",
-  },
-  {
-    id: 4,
-    imgUrl:
-      "https://www.chickendelight.com.au/wp-content/uploads/2020/07/Chicken-Whole-3.jpg",
-    name: ["Leg Piece", "nonveg", "murgi","all"],
-    price: 300,
-    para: "whole size chicken",
-    weight: "2kg",
-  },
-  {
-    id: 5,
-    imgUrl:
-      "https://5.imimg.com/data5/UB/GK/MY-728206/fish-pangasius-pangas-baikar-500x500.jpg",
-    name: ["baiki", "fish", "nonveg", "baiki fish", "badi fish","all"],
-    price: 90,
-    para: "baiki fish",
-    weight: "500g",
-  },
-  {
-    id: 6,
-    imgUrl: "https://5.imimg.com/data5/VK/NP/MY-27605712/pangasius-fish.jpg",
-    name: ["baiki", "fish", "nonveg", "baiki fish", "badi fish","all"],
-    price: 170,
-    para: "baiki fish",
-    weight: "1kg",
-  },
-  {
-    id: 7,
-    imgUrl:
-      "https://bombayfreshfish.com/wp-content/uploads/2022/10/Rohu-Main.jpg",
-    name: ["rohu", "fish", "nonveg", "rohu fish","all"],
-    price: 180,
-    para: "rohu fish",
-    weight: "1kg",
-  },
-  {
-    id: 8,
-    imgUrl: "https://capon.in/media/2022/04/fresh-rohu-fish-capon.jpg",
-    name: ["rohu", "fish", "nonveg", "rohu fish","all"],
-    price: 100,
-    para: "rohu fish",
-    weight: "500g",
-  },
+ 
   {
     id: 9,
     imgUrl:
       "https://bisarga.com/wp-content/uploads/2021/06/India-Gate-Basmati-Rice-Bag-Super-5kg.jpg",
     name: ["rice", "chawal","all"],
     price: 400,
-    para: "rice",
+    para: "Bashmati rice",
     weight: "5kg",
   },
   {
@@ -84,7 +15,7 @@ export const productData = [
       "https://content.jdmagicbox.com/quickquotes/images_main/-g7zjtfvq.png?impolicy=queryparam&im=Resize=(360,360),aspect=fit",
     name: ["aata", "flour","all"],
     price: 300,
-    para: "aata",
+    para: " Aashirwad Flour",
     weight: "5kg",
   },
   {
@@ -431,6 +362,77 @@ export const productData = [
     para: "5 star",
     weight: "5 piece",
   },
+
+  {
+    id: 1,
+    imgUrl:
+      "https://www.meathouseindia.com/wp-content/uploads/2022/08/mutton-curry-cutside-view.jpg",
+    name: ["Mutton", "nonveg", "Meat","all"],
+    price: 800,
+    para: "Fresh mutton",
+    weight: "1kg",
+  },
+  {
+    id: 2,
+    imgUrl:
+      "https://jagsfresh-bucket.s3.amazonaws.com/media/package/img_one/2023-11-01/mutton_500g__1kg.jpg",
+    name: ["Mutton", "nonveg", "Meat","all"],
+    price: 400,
+    para: "fresh mutton",
+    weight: "500g",
+  },
+  {
+    id: 3,
+    imgUrl:
+      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/app/assets/products/sliding_images/jpeg/c0a8ea75-a19c-47b6-b3c8-6ee37a33e14a.jpg?ts=1705489313",
+    name: ["Leg Piece", "nonveg", "murgi","all"],
+    price: 100,
+    para: "chicken legs",
+    weight: "500g",
+  },
+  {
+    id: 4,
+    imgUrl:
+      "https://www.chickendelight.com.au/wp-content/uploads/2020/07/Chicken-Whole-3.jpg",
+    name: ["Leg Piece", "nonveg", "murgi","all"],
+    price: 300,
+    para: "whole size chicken",
+    weight: "2kg",
+  },
+  {
+    id: 5,
+    imgUrl:
+      "https://5.imimg.com/data5/UB/GK/MY-728206/fish-pangasius-pangas-baikar-500x500.jpg",
+    name: ["baiki", "fish", "nonveg", "baiki fish", "badi fish","all"],
+    price: 90,
+    para: "baiki fish",
+    weight: "500g",
+  },
+  {
+    id: 6,
+    imgUrl: "https://5.imimg.com/data5/VK/NP/MY-27605712/pangasius-fish.jpg",
+    name: ["baiki", "fish", "nonveg", "baiki fish", "badi fish","all"],
+    price: 170,
+    para: "baiki fish",
+    weight: "1kg",
+  },
+  {
+    id: 7,
+    imgUrl:
+      "https://bombayfreshfish.com/wp-content/uploads/2022/10/Rohu-Main.jpg",
+    name: ["rohu", "fish", "nonveg", "rohu fish","all"],
+    price: 180,
+    para: "rohu fish",
+    weight: "1kg",
+  },
+  {
+    id: 8,
+    imgUrl: "https://capon.in/media/2022/04/fresh-rohu-fish-capon.jpg",
+    name: ["rohu", "fish", "nonveg", "rohu fish","all"],
+    price: 100,
+    para: "rohu fish",
+    weight: "500g",
+  },
 ];
 
 export const ProductsCategories = [
@@ -482,11 +484,7 @@ export const ProductsCategories = [
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-2_10.png",
     category: "dairy",
   },
-  {
-    imgUrl:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/app/assets/products/sliding_images/jpeg/c0a8ea75-a19c-47b6-b3c8-6ee37a33e14a.jpg?ts=1705489313",
-    category: "chicken",
-  },
+  
   {
     imgUrl:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/0c0170fb-baf2-4947-b512-a6f0a5e6ad01.jpg?ts=1711024455",
